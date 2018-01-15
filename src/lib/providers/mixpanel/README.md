@@ -7,6 +7,6 @@
 # Mixpanel
 __homepage__: [mixpanel.com](https://mixpanel.com/)  
 __docs__: [mixpanel.com/help/reference/javascript](https://mixpanel.com/help/reference/javascript)  
-__import__: `import { Angulartics2Mixpanel } from 'angulartics2/mixpanel';`  
+__import__: `import { NgxAnalyticsMixpanel } from 'ngx-analytics/mixpanel';`
 
 ## Setup

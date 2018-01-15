@@ -7,12 +7,12 @@
     "removeComments": true,
     "importHelpers": true
   },
-  "files": ["angulartics2-adobeanalytics.ts"],
+  "files": ["ngx-analytics-adobeanalytics.ts"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableSummariesForJit": false,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/adobeanalytics"
+    "flatModuleId": "ngx-analytics/adobeanalytics"
   }
 }

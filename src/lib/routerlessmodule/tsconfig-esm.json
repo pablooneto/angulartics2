@@ -12,6 +12,6 @@
     "strictMetadataEmit": true,
     "enableSummariesForJit": false,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/routerlessmodule"
+    "flatModuleId": "ngx-analytics/routerlessmodule"
   }
 }

@@ -1,8 +1,8 @@
 {
-  "name": "angulartics2",
-  "description": "Vendor-agnostic web analytics for Angular2 applications",
-  "homepage": "https://angulartics.github.io/angulartics2/",
-  "author": "João Ribeiro <jonnybgod@gmail.com> (http://github.com/JonnyBGod)",
+  "name": "ngx-analytics",
+  "description": "Vendor-agnostic web analytics for Angular2 applications, based on angulartics2",
+  "homepage": "",
+  "author": "Gert Pellin <pellingert@gmail.com> (http://github.com/switch87)",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -15,7 +15,7 @@
     "e2e": "ng e2e --serve",
     "commit": "git-cz",
     "semantic-release": "npm run build && cp -R .git dist/packages-dist && cd dist/packages-dist && semantic-release",
-    "ghpages": "ng build --prod --build-optimizer --aot --no-progress --baseHref='/angulartics2/'"
+    "ghpages": "ng build --prod --build-optimizer --aot --no-progress --baseHref='/ngx-analytics/'"
   },
   "private": true,
   "dependencies": {
@@ -77,9 +77,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "http://github.com/SnakeByteDevelopment/angulartics2/issues"
+    "url": "http://github.com/SnakeByteDevelopment/ngx-analytics/issues"
   },
-  "repository": "SnakeByteDevelopment/angulartics2",
+  "repository": "SnakeByteDevelopment/ngx-analytics",
   "engines": {
     "node": ">=8"
   },
@@ -89,7 +89,7 @@
     }
   },
   "contributors": [
-    "Gert Pellin <pellingert@gmail.com> (http://github.com/switch87)",
+    "João Ribeiro <jonnybgod@gmail.com> (http://github.com/JonnyBGod)",
     "Luis Farzati <lfarzati@gmail.com> (http://github.com/luisfarzati)",
     "Tim Elfelt <timelf123@gmail.com> (https://github.com/timelf123)",
     "Simon Morvan <garphy@zone84.net> (https://github.com/morvans)",
@@ -123,8 +123,12 @@
     "Tyler Danielson <tysdanielson@gmail.com> (https://github.com/tydanielson)"
   ],
   "keywords": [
-    "angular2",
-    "ng2",
+    "angular4",
+    "angular5",
+    "angularx",
+    "ng4",
+    "ng5",
+    "ngx",
     "angular",
     "analytics",
     "tracking",

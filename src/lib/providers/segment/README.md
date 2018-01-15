@@ -7,17 +7,17 @@
 # Segment
 __homepage__: [segment.com](https://segment.com/)  
 __docs__: [segment.com/docs/sources/website/analytics.js](https://segment.com/docs/sources/website/analytics.js/)  
-__import__: `import { Angulartics2Segment } from 'angulartics2/segment';`  
+__import__: `import { NgxAnalyticsSegment } from 'ngx-analytics/segment';`
 
 ## Setup
-1. Add `Angulartics2Module` to your root NgModule passing an array of providers to enable
+1. Add `NgxAnalyticsModule` to your root NgModule passing an array of providers to enable
 ```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2Segment } from 'angulartics2/segment';
+import { NgxAnalyticsModule } from 'ngx-analytics';
+import { NgxAnalyticsSegment } from 'ngx-analytics/segment';
 
 const ROUTES: Routes = [
   { path: '',      component: HomeComponent },
@@ -30,7 +30,7 @@ const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
 
     // added to imports
-    Angulartics2Module.forRoot([Angulartics2Segment]),
+    NgxAnalyticsModule.forRoot([NgxAnalyticsSegment]),
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
@@ -39,10 +39,10 @@ const ROUTES: Routes = [
 2. __Required__: Import your providers in the root component. This starts the tracking of route changes.
 ```ts
 // component
-import { Angulartics2Segment } from 'angulartics2/segment';
+import { NgxAnalyticsSegment } from 'ngx-analytics/segment';
 
 @Component({  ...  })
 export class AppComponent {
-  constructor(angulartics2Segment: Angulartics2Segment) {}
+  constructor(ngx-analyticsSegment: NgxAnalyticsSegment) {}
 }
 ```

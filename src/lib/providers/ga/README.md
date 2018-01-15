@@ -7,18 +7,18 @@
 # Google Analytics
 __homepage__: [google.com/analytics](https://www.google.com/analytics)  
 __docs__: [developers.google.com/analytics/devguides/collection/analyticsjs/](https://developers.google.com/analytics/devguides/collection/analyticsjs/)  
-__import__: `import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';`  
+__import__: `import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';`
 
 ## Setup
 1. To setup Google Analytics add the folowing to main.ts
 
 ```ts
-import {Angulartics2GoogleAnalytics} from "angulartics2/ga";
+import {NgxAnalyticsGoogleAnalytics} from "ngx-analytics/ga";
 
 
 if (environment.production) {
   // ...
-  Angulartics2GoogleAnalytics.prototype.createGaSession(environment.googleAnalytics);
+  NgxAnalyticsGoogleAnalytics.prototype.createGaSession(environment.googleAnalytics);
 }
 ```
 
@@ -37,4 +37,4 @@ export const environment = {
 
 for localhost environments replace 'auto' with 'none'
 
-3. [Setup Angulartics](https://github.com/angulartics/angulartics2/tree/next#installation) using `Angulartics2GoogleAnalytics`
+3. [Setup Angulartics](https://github.com/angulartics/ngx-analytics/tree/next#installation) using `NgxAnalyticsGoogleAnalytics`

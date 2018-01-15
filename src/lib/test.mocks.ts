@@ -5,14 +5,14 @@ import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { UIRouterModule } from '@uirouter/angular';
 
-import { Angulartics2, Angulartics2Module } from 'angulartics2';
+import { NgxAnalytics, NgxAnalyticsModule } from 'ngx-analytics';
 
 @Injectable()
 export class DummyProvider {
   eventSpy: any;
-  constructor(angulartics2: Angulartics2) {
+  constructor(ngxAnalytics: NgxAnalytics) {
     this.eventSpy = jasmine.createSpy('eventSpy');
-    angulartics2.pageTrack.subscribe((x) => this.eventSpy(x));
+    ngxAnalytics.pageTrack.subscribe((x) => this.eventSpy(x));
   }
 }
 
@@ -106,7 +106,7 @@ export function createRootWithRouter(
       useHash: true,
       otherwise: { state: 'home' },
     }),
-    Angulartics2Module.forRoot([ DummyProvider ]),
+    NgxAnalyticsModule.forRoot([ DummyProvider ]),
   ],
   entryComponents: [UIRootCmp],
   declarations: [
@@ -122,7 +122,7 @@ export class UITestModule {
   imports: [
     CommonModule,
     RouterTestingModule,
-    Angulartics2Module.forRoot([ DummyProvider ]),
+    NgxAnalyticsModule.forRoot([ DummyProvider ]),
   ],
   entryComponents: [RootCmp],
   declarations: [

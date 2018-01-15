@@ -7,12 +7,12 @@
     "removeComments": true,
     "importHelpers": true
   },
-  "files": ["angulartics2-amplitude.ts"],
+  "files": ["ngx-analytics-amplitude.ts"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableSummariesForJit": false,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/amplitude"
+    "flatModuleId": "ngx-analytics/amplitude"
   }
 }

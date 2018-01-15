@@ -6,12 +6,12 @@
     "declaration": false,
     "removeComments": true
   },
-  "files": ["angulartics2-hubspot.ts"],
+  "files": ["ngx-analytics-hubspot.ts"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableSummariesForJit": false,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/hubspot"
+    "flatModuleId": "ngx-analytics/hubspot"
   }
 }

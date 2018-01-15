@@ -16,7 +16,7 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "paths": {
-      "angulartics2": ["../../../dist/es2015/index"]
+      "ngx-analytics": ["../../../dist/es2015/index"]
     }
   },
   "files": ["public_api.ts"],
@@ -25,6 +25,6 @@
     "strictMetadataEmit": true,
     "enableSummariesForJit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/uiroutermodule"
+    "flatModuleId": "ngx-analytics/uiroutermodule"
   }
 }

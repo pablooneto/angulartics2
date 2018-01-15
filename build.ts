@@ -18,25 +18,25 @@ const core = ['core', 'uiroutermodule', 'routerlessmodule'];
 
 // Rollup globals
 const MODULE_NAMES = {
-  core: 'angulartics2',
-  uiroutermodule: 'angulartics2.uiroutermodule',
-  routerlessmodule: 'angulartics2.routerlessmodule',
-  adobeanalytics: 'angulartics2.adobeanalytics',
-  appinsights: 'angulartics2.appinsights',
-  baidu: 'angulartics2.baidu',
-  facebook: 'angulartics2.facebook',
-  ga: 'angulartics2.ga',
-  'ga-enhanced-ecom': 'angulartics2.ga-enhanced-ecom',
-  gtm: 'angulartics2.gtm',
-  hubspot: 'angulartics2.hubspot',
-  kissmetrics: 'angulartics2.kissmetrics',
-  mixpanel: 'angulartics2.mixpanel',
-  piwik: 'angulartics2.piwik',
-  segment: 'angulartics2.segment',
-  intercom: 'angulartics2.intercom',
-  woopra: 'angulartics2.woopra',
-  clicky: 'angulartics2.clicky',
-  amplitude: 'angulartics2.amplitude',
+  core: 'ngx-analytics',
+  uiroutermodule: 'ngx-analytics.uiroutermodule',
+  routerlessmodule: 'ngx-analytics.routerlessmodule',
+  adobeanalytics: 'ngx-analytics.adobeanalytics',
+  appinsights: 'ngx-analytics.appinsights',
+  baidu: 'ngx-analytics.baidu',
+  facebook: 'ngx-analytics.facebook',
+  ga: 'ngx-analytics.ga',
+  'ga-enhanced-ecom': 'ngx-analytics.ga-enhanced-ecom',
+  gtm: 'ngx-analytics.gtm',
+  hubspot: 'ngx-analytics.hubspot',
+  kissmetrics: 'ngx-analytics.kissmetrics',
+  mixpanel: 'ngx-analytics.mixpanel',
+  piwik: 'ngx-analytics.piwik',
+  segment: 'ngx-analytics.segment',
+  intercom: 'ngx-analytics.intercom',
+  woopra: 'ngx-analytics.woopra',
+  clicky: 'ngx-analytics.clicky',
+  amplitude: 'ngx-analytics.amplitude',
 };
 
 const GLOBALS = {
@@ -66,7 +66,7 @@ const GLOBALS = {
   'rxjs/observable/merge': 'Rx.Observable',
   'rxjs/observable/of': 'Rx.Observable',
 
-  'angulartics2': MODULE_NAMES['core'],
+  'ngx-analytics': MODULE_NAMES['core'],
 };
 
 function createEntry(name): string {

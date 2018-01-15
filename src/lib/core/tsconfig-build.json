@@ -21,6 +21,6 @@
     "strictMetadataEmit": true,
     "enableSummariesForJit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2"
+    "flatModuleId": "ngx-analytics"
   }
 }

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angulartics2 App', () => {
+describe('ngx-analytics App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('angulartics2 App', () => {
 
   it('should display home page header', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('angulartics2');
+    expect(page.getParagraphText()).toEqual('ngx-analytics');
   });
 });

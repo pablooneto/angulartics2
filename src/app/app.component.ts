@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 
-const importModule = `import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+const importModule = `import { NgxAnalyticsModule } from 'ngx-analytics';
+import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
 
 @NgModule({
   imports: [
     // added to imports
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
   ],
 })
 `;
 
-const importComponent = `import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+const importComponent = `import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
 
 @Component({
   selector: 'app',
@@ -19,7 +19,7 @@ const importComponent = `import { Angulartics2GoogleAnalytics } from 'angulartic
 })
 export class AppComponent {
   // initializes the service and starts event subscriptions
-  constructor(googleAnalytics: Angulartics2GoogleAnalytics) {}
+  constructor(googleAnalytics: NgxAnalyticsGoogleAnalytics) {}
 }
 `;
 

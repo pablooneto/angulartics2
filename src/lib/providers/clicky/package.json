@@ -1,12 +1,12 @@
 {
-  "name": "angulartics2/clicky",
+  "name": "ngx-analytics/clicky",
   "description": "The clicky module",
-  "homepage": "https://angulartics.github.io/angulartics2/",
+  "homepage": "https://angulartics.github.io/ngx-analytics/",
   "author": "João Ribeiro <jonnybgod@gmail.com> (http://github.com/JonnyBGod)",
   "bugs": {
-    "url": "http://github.com/angulartics/angulartics2/issues"
+    "url": "http://github.com/angulartics/ngx-analytics/issues"
   },
-  "repository": "angulartics/angulartics2",
+  "repository": "angulartics/ngx-analytics",
   "main": "../bundles/clicky.umd.js",
   "module": "clicky.es5.js",
   "es2015": "clicky.es2015.js",

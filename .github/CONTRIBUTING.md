@@ -1,6 +1,6 @@
 ## Read and contribute to the Wiki
 
-Make sure you read the [Wiki](https://github.com/angulartics/angulartics2/wiki).
+Make sure you read the [Wiki](https://github.com/angulartics/ngx-analytics/wiki).
 
 ## Submitting Pull Requests
 
