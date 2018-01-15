@@ -77,9 +77,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "http://github.com/angulartics/angulartics2/issues"
+    "url": "http://github.com/SnakeByteDevelopment/angulartics2/issues"
   },
-  "repository": "angulartics/angulartics2",
+  "repository": "SnakeByteDevelopment/angulartics2",
   "engines": {
     "node": ">=8"
   },
@@ -89,6 +89,7 @@
     }
   },
   "contributors": [
+    "Gert Pellin <pellingert@gmail.com> (http://github.com/switch87)",
     "Luis Farzati <lfarzati@gmail.com> (http://github.com/luisfarzati)",
     "Tim Elfelt <timelf123@gmail.com> (https://github.com/timelf123)",
     "Simon Morvan <garphy@zone84.net> (https://github.com/morvans)",
