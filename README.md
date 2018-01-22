@@ -1,15 +1,15 @@
-# angulartics2
+# ngx-analytics
 
-[![NPM version](https://img.shields.io/npm/v/angulartics2.svg)](https://npmjs.org/package/angulartics2) [![NPM downloads](https://img.shields.io/npm/dm/angulartics2.svg)](https://npmjs.org/package/angulartics2)
-[![devDependency Status](https://david-dm.org/angulartics/angulartics2/dev-status.svg)](https://david-dm.org/angulartics/angulartics2#info=devDependencies)
-[![Build Status](https://api.travis-ci.org/angulartics/angulartics2.svg?branch=master)](https://travis-ci.org/angulartics/angulartics2)
+[![NPM version](https://img.shields.io/npm/v/ngx-analytics.svg)](https://npmjs.org/package/ngx-analytics) [![NPM downloads](https://img.shields.io/npm/dm/ngx-analytics.svg)](https://npmjs.org/package/ngx-analytics)
+[![devDependency Status](https://david-dm.org/angulartics/ngx-analytics/dev-status.svg)](https://david-dm.org/angulartics/ngx-analytics#info=devDependencies)
+[![Build Status](https://api.travis-ci.org/angulartics/ngx-analytics.svg?branch=master)](https://travis-ci.org/angulartics/ngx-analytics)
 
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Gitter Chat](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/angulartics/angulartics2)
+[![Gitter Chat](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/angulartics/ngx-analytics)
 
-Vendor-agnostic Analytics for Angular Applications. [angulartics.github.io/angulartics2](https://angulartics.github.io/angulartics2 "Angulartics Docs")
+Vendor-agnostic Analytics for Angular Applications. [angulartics.github.io/ngx-analytics](https://angulartics.github.io/ngx-analytics "Angulartics Docs")
 
-- [angulartics2](#angulartics2)
+- [ngx-analytics](#ngx-analytics)
   - [Installation](#installation)
     - [Include it in your application](#include-it-in-your-application)
   - [Usage](#usage)
@@ -32,18 +32,18 @@ Vendor-agnostic Analytics for Angular Applications. [angulartics.github.io/angul
 ## Installation
 
 ```sh
-npm install angulartics2 --save
+npm install ngx-analytics --save
 ```
 
 ### Include it in your application
-1. Add `Angulartics2Module` to your root NgModule passing an array of providers to enable
+1. Add `NgxAnalyticsModule` to your root NgModule passing an array of providers to enable
 ```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { NgxAnalyticsModule } from 'ngx-analytics';
+import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
 
 const ROUTES: Routes = [
   { path: '',      component: HomeComponent },
@@ -56,7 +56,7 @@ const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
 
     // added to imports
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
@@ -65,18 +65,18 @@ const ROUTES: Routes = [
 2. __Required__: Import your providers in the root component. This starts the tracking of route changes.
 ```ts
 // component
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
 
 @Component({  ...  })
 export class AppComponent {
-  constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {}
+  constructor(ngx-analyticsGoogleAnalytics: NgxAnalyticsGoogleAnalytics) {}
 }
 ```
 
 ## Usage
 ### Tracking events
 
-To track events you can inject the directive ```angulartics2On``` into any component and use the attributes ```angulartics2On```, ```angularticsAction``` and ```angularticsCategory```:
+To track events you can inject the directive ```ngx-analyticsOn``` into any component and use the attributes ```ngx-analyticsOn```, ```angularticsAction``` and ```angularticsCategory```:
 
 
 ```ts
@@ -87,7 +87,7 @@ import { Component } from '@angular/core';
   selector: 'song-download-box',
   template: `
     <div 
-      angulartics2On="click" 
+      ngx-analyticsOn="click"
       angularticsAction="DownloadClick" 
       [angularticsCategory]="song.name">
       Click Me
@@ -96,11 +96,11 @@ import { Component } from '@angular/core';
 export class SongDownloadBox {}
 
 import { NgModule } from '@angular/core';
-import { Angulartics2Module } from 'angulartics2';
+import { NgxAnalyticsModule } from 'ngx-analytics';
 
 @NgModule({
   imports: [
-    Angulartics2Module,
+    NgxAnalyticsModule,
   ],
   declarations: [
     SongDownloadBox,
@@ -111,7 +111,7 @@ import { Angulartics2Module } from 'angulartics2';
 If you need event label, you can use
 ```html
 <div 
-  angulartics2On="click" 
+  ngx-analyticsOn="click"
   angularticsAction="DownloadClick" 
   angularticsLabel="label-name" 
   angularticsValue="value" 
@@ -124,9 +124,9 @@ If you need event label, you can use
 
 ### Tracking events in the code
 ```ts
-import { Angulartics2 } from 'angulartics2';
-constructor(private angulartics2: Angulartics2) {
-  this.angulartics2.eventTrack.next({ 
+import { NgxAnalytics } from 'ngx-analytics';
+constructor(private ngx-analytics: NgxAnalytics) {
+  this.ngx-analytics.eventTrack.next({
     action: 'myAction', 
     properties: { category: 'myCategory' },
   });
@@ -135,7 +135,7 @@ constructor(private angulartics2: Angulartics2) {
 
 If you need event label
 ```ts
-this.angulartics2.eventTrack.next({ 
+this.ngx-analytics.eventTrack.next({
   action: 'myAction',
   properties: { 
     category: 'myCategory', 
@@ -148,7 +148,7 @@ this.angulartics2.eventTrack.next({
 
 Pass string literals or regular expressions to exclude routes from automatic pageview tracking.
 ````ts
-Angulartics2Module.forRoot([providers], {
+NgxAnalyticsModule.forRoot([providers], {
   pageTracking: {
     excludedRoutes: [
       /\/[0-9]{4}\/[0-9]{2}\/[a-zA-Z0-9|\-]*/,
@@ -161,7 +161,7 @@ Angulartics2Module.forRoot([providers], {
 ### Remove ID's from url paths
 `/project/12981/feature` becomes `/project/feature`
 ````ts
-Angulartics2Module.forRoot([providers], {
+NgxAnalyticsModule.forRoot([providers], {
   pageTracking: {
     clearIds: true,
   }
@@ -173,7 +173,7 @@ You can set your own regexp if you need to :
 
  `/project/a01/feature` becomes `/project/feature`
  ````ts
- Angulartics2Module.forRoot([providers], {
+ NgxAnalyticsModule.forRoot([providers], {
    pageTracking: {
      clearIds: true,
      idsRegExp: /^[a-z]\d+$/,
@@ -186,7 +186,7 @@ This can be combined with clearIds and idsRegExp
 
 `/project/12981/feature?param=12` becomes `/project/12981/feature`
 ````ts
-Angulartics2Module.forRoot([providers], {
+NgxAnalyticsModule.forRoot([providers], {
   pageTracking: {
     clearQueryParams: true,
   }
@@ -197,12 +197,12 @@ Angulartics2Module.forRoot([providers], {
 __Warning:__ this support is still experiemental  
 `@angular/router` must still be installed! However, it will not be used.
 ````ts
-import { Angulartics2RouterlessModule } from 'angulartics2/routerlessmodule';
+import { NgxAnalyticsRouterlessModule } from 'ngx-analytics/routerlessmodule';
 @NgModule({
   // ...
   imports: [
     BrowserModule,
-    Angulartics2RouterlessModule.forRoot([Angulartics2GoogleAnalytics]),
+    NgxAnalyticsRouterlessModule.forRoot([NgxAnalyticsGoogleAnalytics]),
   ],
 })
 ````
@@ -211,12 +211,12 @@ import { Angulartics2RouterlessModule } from 'angulartics2/routerlessmodule';
 __Warning:__ this support is still experiemental  
 `@angular/router` must still be installed! However, it will not be used.  
 ````ts
-import { Angulartics2UirouterModule } from 'angulartics2/uiroutermodule';
+import { NgxAnalyticsUirouterModule } from 'ngx-analytics/uiroutermodule';
 @NgModule({
   // ...
   imports: [
     BrowserModule,
-    Angulartics2UirouterModule.forRoot([Angulartics2GoogleAnalytics]),
+    NgxAnalyticsUirouterModule.forRoot([NgxAnalyticsGoogleAnalytics]),
   ],
 })
 ````
@@ -241,19 +241,19 @@ import { Angulartics2UirouterModule } from 'angulartics2/uiroutermodule';
 
 ### For other providers
 
-If there's no Angulartics2 plugin for your analytics vendor of choice, please feel free to write yours and PR' it!
+If there's no NgxAnalytics plugin for your analytics vendor of choice, please feel free to write yours and PR' it!
 
 ### Minimal setup for Google Analytics
 
 To setup Google Analytics add the folowing to main.ts
 
 ```ts
-import {Angulartics2GoogleAnalytics} from "angulartics2/ga";
+import {NgxAnalyticsGoogleAnalytics} from "ngx-analytics/ga";
 
 
 if (environment.production) {
   // ...
-  Angulartics2GoogleAnalytics.prototype.createGaSession(environment.googleAnalytics);
+  NgxAnalyticsGoogleAnalytics.prototype.createGaSession(environment.googleAnalytics);
 }
 ```
 
@@ -273,21 +273,21 @@ export const environment = {
 for localhost environments replace 'auto' with 'none'
 
 ## v4 Migration and Breaking Changes
-See [Release Notes](https://github.com/angulartics/angulartics2/releases/tag/v4.0.0)
+See [Release Notes](https://github.com/angulartics/ngx-analytics/releases/tag/v4.0.0)
 
 ## SystemJS
 Using SystemJS? If you aren't using `defaultJSExtensions: true` you may need to use:
 ```ts
 System.config({
     packages: {
-        "/angulartics2": {"defaultExtension": "js"},
+        "/ngx-analytics": {"defaultExtension": "js"},
     },
 });
 ```
 
 ## Contributing
 
-Please see the [CONTRIBUTING](https://github.com/angulartics/angulartics2/blob/master/.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](https://github.com/angulartics/angulartics2/blob/master/.github/CODE_OF_CONDUCT.md) files for guidelines.
+Please see the [CONTRIBUTING](https://github.com/angulartics/ngx-analytics/blob/master/.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](https://github.com/angulartics/ngx-analytics/blob/master/.github/CODE_OF_CONDUCT.md) files for guidelines.
 
 ## License
 

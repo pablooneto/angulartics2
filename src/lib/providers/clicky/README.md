@@ -7,7 +7,7 @@
 # Clicky
 __homepage__: [clicky.com](https://clicky.com/)  
 __docs__: [clicky.com/help/](https://clicky.com/help/)  
-__import__: `import { Angulartics2Clicky } from 'angulartics2/clicky';`  
+__import__: `import { NgxAnalyticsClicky } from 'ngx-analytics/clicky';`
 
 ## Setup
 
@@ -35,8 +35,8 @@ import { RouterModule, Routes, RouterOutlet } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2Clicky } from 'angulartics2/clicky';
+import { NgxAnalyticsModule } from 'ngx-analytics';
+import { NgxAnalyticsClicky } from 'ngx-analytics/clicky';
 import { PageComponent } from './page/page.component';
 import { HomeComponent } from './home/home.component';
 
@@ -54,7 +54,7 @@ const ROUTES: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    Angulartics2Module.forRoot([Angulartics2Clicky])
+    NgxAnalyticsModule.forRoot([NgxAnalyticsClicky])
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -66,7 +66,7 @@ export class AppModule { }
 ```ts
 // app.component.ts 
 import { Component } from '@angular/core';
-import { Angulartics2Clicky } from 'angulartics2-clicky';
+import { NgxAnalyticsClicky } from 'ngx-analytics-clicky';
 
 @Component({
   selector: 'app-root',
@@ -75,7 +75,7 @@ import { Angulartics2Clicky } from 'angulartics2-clicky';
 })
 export class AppComponent {
   // Enable auto route logging
-  constructor(angulartics2Clicky: Angulartics2Clicky) {}
+  constructor(ngx-analyticsClicky: NgxAnalyticsClicky) {}
 }
 ```
 
@@ -83,10 +83,10 @@ export class AppComponent {
 ```html
   <li>
     <!-- Track Events -->
-    <button angulartics2On="click" angularticsAction="event-button" [angularticsProperties]="{title: 'Event Button Clicked'}">Track Button Click Event 1</button>
+    <button ngx-analyticsOn="click" angularticsAction="event-button" [angularticsProperties]="{title: 'Event Button Clicked'}">Track Button Click Event 1</button>
   </li>
   <li>
     <!-- Track Goals -->
-    <button angulartics2On="click" angularticsAction="event-button" [angularticsProperties]="{goal: 'Goal #1', revenue: 500, noQueue: true}">Goal Button</button>
+    <button ngx-analyticsOn="click" angularticsAction="event-button" [angularticsProperties]="{goal: 'Goal #1', revenue: 500, noQueue: true}">Goal Button</button>
   </li>
 ```

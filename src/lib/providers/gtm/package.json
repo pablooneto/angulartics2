@@ -1,12 +1,12 @@
 {
-  "name": "angulartics2/gtm",
+  "name": "ngx-analytics/gtm",
   "description": "The gtm module",
-  "homepage": "https://angulartics.github.io/angulartics2/",
+  "homepage": "https://angulartics.github.io/ngx-analytics/",
   "author": "João Ribeiro <jonnybgod@gmail.com> (http://github.com/JonnyBGod)",
   "bugs": {
-    "url": "http://github.com/angulartics/angulartics2/issues"
+    "url": "http://github.com/angulartics/ngx-analytics/issues"
   },
-  "repository": "angulartics/angulartics2",
+  "repository": "angulartics/ngx-analytics",
   "main": "../bundles/gtm.umd.js",
   "module": "gtm.es5.js",
   "es2015": "gtm.es2015.js",

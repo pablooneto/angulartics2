@@ -1,14 +1,14 @@
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 
-import { Angulartics2Settings } from './angulartics2-config';
+import { NgxAnalyticsSettings } from './ngx-analytics-config';
 
 export interface TrackNavigationEnd {
   url: string;
 }
 
 export class RouterlessTracking {
-  trackLocation(settings: Angulartics2Settings): Observable<TrackNavigationEnd> {
+  trackLocation(settings: NgxAnalyticsSettings): Observable<TrackNavigationEnd> {
     return new BehaviorSubject<TrackNavigationEnd>({ url: '/' });
   }
   prepareExternalUrl(url: string): string {

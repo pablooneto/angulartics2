@@ -6,12 +6,12 @@
     "declaration": false,
     "removeComments": true
   },
-  "files": ["angulartics2-appinsights.ts"],
+  "files": ["ngx-analytics-appinsights.ts"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableSummariesForJit": false,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/appinsights"
+    "flatModuleId": "ngx-analytics/appinsights"
   }
 }

@@ -7,7 +7,7 @@
 # Piwik
 __homepage__: [piwik.org](https://piwik.org)  
 __docs__: [developer.piwik.org](https://developer.piwik.org)  
-__import__: `import { Angulartics2Piwik } from 'angulartics2/piwik';`  
+__import__: `import { NgxAnalyticsPiwik } from 'ngx-analytics/piwik';`
 
 ## Setup
 Add the sandard piwik track code inside your index.html head tag:
@@ -34,23 +34,23 @@ Replace YOUR-DOMAIN with your piwik domain (`//DOMAIN.innocraft.cloud` if you ar
 
 Pass the Piwik provider to angulartics in app.module:
 ```ts
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2Piwik } from 'angulartics2/piwik';
+import { NgxAnalyticsModule } from 'ngx-analytics';
+import { NgxAnalyticsPiwik } from 'ngx-analytics/piwik';
 @NgModule({
   imports: [
-    Angulartics2Module.forRoot([Angulartics2Piwik]),
+    NgxAnalyticsModule.forRoot([NgxAnalyticsPiwik]),
     ...
 ```
 
 Inject angulartics into your root component (usually appComponent)
 ```ts
-import { Angulartics2Piwik } from 'angulartics2/piwik';
+import { NgxAnalyticsPiwik } from 'ngx-analytics/piwik';
 export class AppComponent {
-  // inject Angulartics2Piwik in root component to initialize it
-  constructor(private angulartics2Piwik: Angulartics2Piwik){ }
+  // inject NgxAnalyticsPiwik in root component to initialize it
+  constructor(private ngx-analyticsPiwik: NgxAnalyticsPiwik){ }
 }
 ```
 
 To track full URLs if there is a hash (#), make sure to enable `settings=>websites=>settings=>page url fragments tracking` in the Piwik dashboard.
 
-Once set up, Angulartics [usage](https://github.com/angulartics/angulartics2#usage) is the same regardless of provider
+Once set up, Angulartics [usage](https://github.com/angulartics/ngx-analytics#usage) is the same regardless of provider

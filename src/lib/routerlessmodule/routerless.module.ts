@@ -1,27 +1,27 @@
 import { ModuleWithProviders, NgModule, Provider } from '@angular/core';
 
 import {
-  Angulartics2,
-  Angulartics2OnModule,
-  Angulartics2Settings,
+  NgxAnalytics,
+  NgxAnalyticsOnModule,
+  NgxAnalyticsSettings,
   ANGULARTICS2_TOKEN,
   RouterlessTracking,
-} from 'angulartics2';
+} from 'ngx-analytics';
 
 @NgModule({
-  imports: [Angulartics2OnModule],
+  imports: [NgxAnalyticsOnModule],
 })
-export class Angulartics2RouterlessModule {
+export class NgxAnalyticsRouterlessModule {
   static forRoot(
     providers: Provider[],
-    settings: Partial<Angulartics2Settings> = {},
+    settings: Partial<NgxAnalyticsSettings> = {},
   ): ModuleWithProviders {
     return {
-      ngModule: Angulartics2RouterlessModule,
+      ngModule: NgxAnalyticsRouterlessModule,
       providers: [
         { provide: ANGULARTICS2_TOKEN, useValue: { providers, settings } },
         RouterlessTracking,
-        Angulartics2,
+        NgxAnalytics,
         ...providers,
       ],
     };

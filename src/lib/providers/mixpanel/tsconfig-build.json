@@ -16,15 +16,15 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "paths": {
-      "angulartics2": ["../../../../dist/es2015/index"]
+      "ngx-analytics": ["../../../../dist/es2015/index"]
     }
   },
-  "files": ["angulartics2-mixpanel.ts"],
+  "files": ["ngx-analytics-mixpanel.ts"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableSummariesForJit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/mixpanel"
+    "flatModuleId": "ngx-analytics/mixpanel"
   }
 }

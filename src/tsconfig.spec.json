@@ -14,7 +14,7 @@
       "facebook-pixel"
     ],
     "paths": {
-      "angulartics2": ["./lib/core/public_api"]
+      "ngx-analytics": ["./lib/core/public_api"]
     }
   },
   "files": ["test.ts"],

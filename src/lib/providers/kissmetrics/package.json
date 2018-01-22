@@ -1,12 +1,12 @@
 {
-  "name": "angulartics2/kissmetrics",
+  "name": "ngx-analytics/kissmetrics",
   "description": "The kissmetrics module",
-  "homepage": "https://angulartics.github.io/angulartics2/",
+  "homepage": "https://angulartics.github.io/ngx-analytics/",
   "author": "João Ribeiro <jonnybgod@gmail.com> (http://github.com/JonnyBGod)",
   "bugs": {
-    "url": "http://github.com/angulartics/angulartics2/issues"
+    "url": "http://github.com/angulartics/ngx-analytics/issues"
   },
-  "repository": "angulartics/angulartics2",
+  "repository": "angulartics/ngx-analytics",
   "main": "../bundles/kissmetrics.umd.js",
   "module": "kissmetrics.es5.js",
   "es2015": "kissmetrics.es2015.js",

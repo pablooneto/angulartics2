@@ -5,28 +5,28 @@ import {
 } from '@angular/core';
 
 import {
-  Angulartics2,
-  Angulartics2OnModule,
-  Angulartics2Settings,
+  NgxAnalytics,
+  NgxAnalyticsOnModule,
+  NgxAnalyticsSettings,
   ANGULARTICS2_TOKEN,
   RouterlessTracking,
-} from 'angulartics2';
+} from 'ngx-analytics';
 import { UIRouterTracking } from './uirouter';
 
 
 @NgModule({
-  imports: [Angulartics2OnModule],
+  imports: [NgxAnalyticsOnModule],
 })
-export class Angulartics2UirouterModule {
+export class NgxAnalyticsUirouterModule {
   static forRoot(
     providers: Provider[],
-    settings: Partial<Angulartics2Settings> = {},
+    settings: Partial<NgxAnalyticsSettings> = {},
   ): ModuleWithProviders {
     return {
-      ngModule: Angulartics2UirouterModule,
+      ngModule: NgxAnalyticsUirouterModule,
       providers: [
         { provide: ANGULARTICS2_TOKEN, useValue: { providers, settings } },
-        Angulartics2,
+        NgxAnalytics,
         { provide: RouterlessTracking, useClass: UIRouterTracking },
         ...providers,
       ],

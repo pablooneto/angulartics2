@@ -1,5 +1,5 @@
 /**
- * Properties passed through angulartics2-clicky and fed into clicky itself
+ * Properties passed through ngx-analytics-clicky and fed into clicky itself
  *
  * @export
  * @interface ClickyProperties

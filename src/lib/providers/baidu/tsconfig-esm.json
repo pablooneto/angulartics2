@@ -6,12 +6,12 @@
     "declaration": false,
     "removeComments": true
   },
-  "files": ["angulartics2-baidu.ts"],
+  "files": ["ngx-analytics-baidu.ts"],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableSummariesForJit": false,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "angulartics2/baidu"
+    "flatModuleId": "ngx-analytics/baidu"
   }
 }

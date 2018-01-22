@@ -1,4 +1,4 @@
-**Note: for support questions, please use one of these channels:** [Chat: Gitter](https://gitter.im/angulartics/angulartics2)
+**Note: for support questions, please use one of these channels:** [Chat: Gitter](https://gitter.im/angulartics/ngx-analytics)
 
 * **I'm submitting a ...**
 [ ] bug report
