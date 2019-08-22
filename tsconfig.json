@@ -1,15 +1,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "downlevelIteration": true,
+    "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "baseUrl": "src",
+    "baseUrl": "./",
     "moduleResolution": "node",
     "noImplicitAny": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -18,7 +20,10 @@
       "dom"
     ],
     "paths": {
-      "ngx-analytics": ["./lib/core/public_api"]
-    }
+      "ngx-analytics": [
+        "./lib/core/public_api"
+      ]
+    },
+    "module": "esnext"
   }
 }

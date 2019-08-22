@@ -11,8 +11,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { StateService } from '@uirouter/angular';
 
 import {
-  NgxAnalytics,
   ANGULARTICS2_TOKEN,
+  NgxAnalytics,
 } from 'ngx-analytics';
 import {
   advance,

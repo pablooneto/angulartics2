@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { SpyLocation } from '@angular/common/testing';
+import { Injectable } from '@angular/core';
 import { fakeAsync, inject, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgxAnalytics } from 'ngx-analytics';
@@ -9,6 +10,7 @@ import { NgxAnalyticsAdobeAnalytics } from './ngx-analytics-adobeanalytics';
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
 declare var window: any;
 
+@Injectable()
 export class MockLocation extends SpyLocation {
   path() {
     return 'http://test.com/test#pagename';

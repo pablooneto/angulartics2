@@ -2,10 +2,9 @@ import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { filter } from 'rxjs/operators/filter';
-import { map } from 'rxjs/operators/map';
+import { filter ,  map } from 'rxjs/operators';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { RouterlessTracking, TrackNavigationEnd } from './routerless';
 
 /**

@@ -5,12 +5,12 @@
 import { spawn } from 'child_process';
 import * as copyfiles from 'copy';
 import { copy } from 'fs-extra';
-import { rollup } from 'rollup';
+import { rollup, RollupLogProps, RollupWarning } from 'rollup';
 import * as filesize from 'rollup-plugin-filesize';
 import * as sourcemaps from 'rollup-plugin-sourcemaps';
-import { Observable } from 'rxjs';
+import { bindCallback, forkJoin, Observable } from 'rxjs';
 
-const copyAll: ((s: string, s1: string) => any) = Observable.bindCallback(
+const copyAll: ((s: string, s1: string) => any) = bindCallback(
   copyfiles,
 );
 
@@ -41,7 +41,6 @@ const MODULE_NAMES = {
 
 const GLOBALS = {
   'tslib': 'tslib',
-
   '@angular/core': 'ng.core',
   '@angular/common': 'ng.common',
   '@angular/forms': 'ng.forms',
@@ -50,22 +49,17 @@ const GLOBALS = {
   '@angular/platform-browser': 'ng.platformBrowser',
   '@angular/platform-server': 'ng.platformServer',
   '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
-
   '@uirouter/core': '@uirouter/core',
-
   'rxjs/Observable': 'Rx',
   'rxjs/Subject': 'Rx',
   'rxjs/Observer': 'Rx',
   'rxjs/Subscription': 'Rx',
   'rxjs/ReplaySubject': 'Rx',
   'rxjs/BehaviorSubject': 'Rx',
-
   'rxjs/operators/filter': 'Rx.operators',
   'rxjs/operators/map': 'Rx.operators',
-
   'rxjs/observable/merge': 'Rx.Observable',
   'rxjs/observable/of': 'Rx.Observable',
-
   'ngx-analytics': MODULE_NAMES['core'],
 };
 
@@ -90,7 +84,7 @@ const TSC_ARGS = (type: string, name: string, config= 'build') => {
  * Create an Observable of a spawned child process.
  */
 function spawnObservable(command: string, args: string[]) {
-  return Observable.create(observer => {
+  return new Observable(observer => {
     const cmd = spawn(command, args);
     observer.next(''); // hack to kick things off, not every command will have a stdout
     cmd.stdout.on('data', (data) => { observer.next(data.toString()); });
@@ -108,15 +102,16 @@ function generateBundle(input, file, name, format): Promise<any> {
     input,
     external: Object.keys(GLOBALS),
     onwarn(warning) {
-      if (warning.code === 'THIS_IS_UNDEFINED') {
+      if (typeof warning !== 'string' && warning.code === 'THIS_IS_UNDEFINED') {
         return;
       }
-      if (warning.code === 'UNUSED_EXTERNAL_IMPORT') {
+      if (typeof warning !== 'string' && warning.code === 'UNUSED_EXTERNAL_IMPORT') {
         return;
       }
-      console.log(warning.message);
+      if (typeof warning !== 'string') {
+        console.log(warning.message);
+      }
     },
-    file,
     plugins,
   }).then(bundle => {
     return bundle.write({
@@ -154,7 +149,7 @@ function createEs(name: string, target: string) {
 function buildModule(name: string, type: string) {
   const es2015$ = spawnObservable(NGC, TSC_ARGS(type, name));
   const esm$ = spawnObservable(NGC, TSC_ARGS(type, name, 'esm'));
-  return Observable.forkJoin(es2015$, esm$);
+  return forkJoin(es2015$, esm$);
 }
 
 async function buildModulesProviders() {

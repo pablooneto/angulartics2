@@ -20,7 +20,7 @@ export class DummyProvider {
 @Component({
   selector: 'root-comp',
   template: `
-    <a ngxAnalyticsOn="click"
+    <a ngx-analyticsOn="click"
       angularticsAction="InitiateSearch">
     </a>
   `,
@@ -33,7 +33,7 @@ class RootCmp {
   selector: 'root-comp',
   template: `
     <button (click)="triggerEvent($event)">Greet</button>
-    <a ngxAnalyticsOn
+    <a ngx-analyticsOn
       (customEvent)="eventTrack($event)"
       angularticsAction="InitiateSearch">
     </a>
@@ -47,7 +47,7 @@ class RootCmp1 {
   selector: 'root-comp',
   template: `
     <div
-      [ngxAnalyticsOn]="'click'"
+      [ngx-analyticsOn]="'click'"
       angularticsAction="InitiateSearch"
       angularticsLabel="custom-label"
       angularticsValue="custom-value"
@@ -63,7 +63,7 @@ class RootCmp2 {
 @Component({
   selector: 'root-comp',
   template: `
-    <a ngxAnalyticsOn="click" angularticsCategory="Search">
+    <a ngx-analyticsOn="click" angularticsCategory="Search">
       InitiateSearch
     </a>
   `,

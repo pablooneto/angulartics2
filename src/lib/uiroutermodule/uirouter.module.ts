@@ -5,10 +5,10 @@ import {
 } from '@angular/core';
 
 import {
+  ANGULARTICS2_TOKEN,
   NgxAnalytics,
   NgxAnalyticsOnModule,
   NgxAnalyticsSettings,
-  ANGULARTICS2_TOKEN,
   RouterlessTracking,
 } from 'ngx-analytics';
 import { UIRouterTracking } from './uirouter';

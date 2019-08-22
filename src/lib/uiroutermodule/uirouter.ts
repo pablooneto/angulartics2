@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Transition, TransitionService } from '@uirouter/core';
 
-import { Subject } from 'rxjs/Subject';
+import { Subject ,  Observable } from 'rxjs';
 
 import { RouterlessTracking, TrackNavigationEnd } from 'ngx-analytics';
-import { Observable } from 'rxjs/Observable';
 
 /**
  * Track Route changes for applications using UI-Router
