@@ -17,8 +17,14 @@
       "ngx-analytics": ["./lib/core/public_api"]
     }
   },
-  "files": ["test.ts"],
-  "include": ["**/*.spec.ts", "**/*.d.ts"],
+  "files": [
+    "test.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ],
   "angularCompilerOptions": {
     "preserveWhitespaces": false
   }

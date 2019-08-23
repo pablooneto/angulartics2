@@ -1,4 +1,5 @@
 import { fakeAsync, inject, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 
 import { advance, createRoot, RootCmp, TestModule } from '../../test.mocks';
 
@@ -38,9 +39,10 @@ describe('NgxAnalyticsGoogleAnalytics', () => {
   it('should track events',
     fakeAsync(inject([NgxAnalytics, NgxAnalyticsGoogleAnalytics],
       (ngxAnalytics: NgxAnalytics, ngxAnalyticsGoogleAnalytics: NgxAnalyticsGoogleAnalytics) => {
+
         fixture = createRoot(RootCmp);
         ngxAnalytics.settings.ga.additionalAccountNames.push('additionalAccountName');
-        ngxAnalytics.eventTrack.next({ action: 'do', properties: { category: 'cat' } });
+        ngxAnalytics.eventTrack.next({ action: 'do', properties: { category: 'cat', page: '/' } });
         advance(fixture);
         expect(ga).toHaveBeenCalledWith('send', 'event', {
           eventCategory: 'cat',
@@ -77,7 +79,7 @@ describe('NgxAnalyticsGoogleAnalytics', () => {
 
         fixture = createRoot(RootCmp);
         const callback = function() { };
-        ngxAnalytics.eventTrack.next({ action: 'do', properties: { category: 'cat', hitCallback: callback } });
+        ngxAnalytics.eventTrack.next({ action: 'do', properties: { category: 'cat', hitCallback: callback, page: '/' } });
         advance(fixture);
         expect(ga).toHaveBeenCalledWith('send', 'event', {
           eventCategory: 'cat',

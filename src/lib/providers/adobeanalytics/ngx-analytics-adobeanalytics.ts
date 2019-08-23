@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 import { NgxAnalytics } from 'ngx-analytics';
-import * as path from "path";
+
 
 declare const s: any;
 

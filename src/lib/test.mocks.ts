@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { UIRouterModule } from '@uirouter/angular';
 
 import { NgxAnalytics, NgxAnalyticsModule } from 'ngx-analytics';
+import { NgxAnalyticsClicky } from './providers/clicky/ngx-analytics-clicky';
 
 @Injectable()
 export class DummyProvider {
@@ -36,6 +37,19 @@ export class HelloCmp4 {}
 @Component({ selector: 'hello-cmp5', template: `<div>5</div>` })
 export class HelloCmp5 {}
 
+@Component({ selector: 'hello-cmp', template: `{{ greeting }}` })
+export class HelloCmpUI {
+  greeting: string;
+  constructor() {
+    this.greeting = 'hello';
+  }
+}
+
+@Component({ selector: 'hello-cmp2', template: `<div>2</div>` })
+export class HelloCmp2UI {}
+
+
+
 export const RoutesConfig: Routes = [
   { path: '', component: HelloCmp },
   { path: 'abc', component: HelloCmp2 },
@@ -53,6 +67,14 @@ export const RoutesConfig: Routes = [
 })
 export class RootCmp {
   constructor(dummy: DummyProvider) {}
+}
+
+@Component({
+  selector: 'root-comp',
+  template: `<router-outlet></router-outlet>`,
+})
+export class RootCmpSticky {
+  constructor(dummy: DummyProvider, ngxAnalyticsClicky: NgxAnalyticsClicky) {}
 }
 
 @Component({
@@ -112,7 +134,7 @@ export function createRootWithRouter(
   declarations: [
     HelloCmp,
     HelloCmp2,
-    UIRootCmp,
+    UIRootCmp
   ],
 })
 export class UITestModule {
@@ -132,6 +154,7 @@ export class UITestModule {
     HelloCmp4,
     HelloCmp5,
     RootCmp,
+    RootCmpSticky
   ],
 })
 export class TestModule {

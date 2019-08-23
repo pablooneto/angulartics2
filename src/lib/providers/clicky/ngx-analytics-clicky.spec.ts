@@ -7,7 +7,7 @@ import {
 import { Title } from '@angular/platform-browser';
 
 import { NgxAnalytics } from 'ngx-analytics';
-import { advance, createRoot, RootCmp, TestModule } from '../../test.mocks';
+import { advance, createRoot, RootCmp, RootCmpSticky, TestModule } from '../../test.mocks';
 import { NgxAnalyticsClicky } from './ngx-analytics-clicky';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
@@ -23,19 +23,19 @@ describe('NgxAnalyticsClicky', () => {
       imports: [TestModule],
       providers: [NgxAnalyticsClicky, Title],
     });
-    window.console = jasmine.createSpyObj('console', ['warn', 'log']);
+    console = jasmine.createSpyObj('console', ['warn', 'log']);
   });
 
   describe('on init', () => {
     beforeEach(() => {
-      window.console = jasmine.createSpyObj('console', ['warn', 'log']);
+      console = jasmine.createSpyObj('console', ['warn', 'log']);
     });
 
     it('should complain if clicky is not found',
       fakeAsync(inject([NgxAnalytics, NgxAnalyticsClicky],
         (ngxAnalytics: NgxAnalytics, ngxAnalyticsClicky: NgxAnalyticsClicky) => {
-          window.clicky = undefined;
-          fixture = createRoot(RootCmp);
+          clicky = undefined;
+          fixture = createRoot(RootCmpSticky);
           advance(fixture);
           expect(console.warn).toHaveBeenCalled();
         }),
