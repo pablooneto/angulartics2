@@ -18,7 +18,7 @@ import {
   advance,
   createRoot,
   createRootWithRouter,
-  DummyProvider, HelloCmp,
+  DummyProvider,
   RootCmp,
   RouterlessRootCmp,
   RoutesConfig,
@@ -132,9 +132,7 @@ describe('ngx-analytics', () => {
     it('should track pages on ui router',
       fakeAsync(inject([StateService, NgxAnalytics],
         (state: StateService, ngxAnalytics: NgxAnalytics) => {
-
-          // fixture = TestBed.createComponent(UIRootCmp); <-- can't createComponent with ui-view
-          fixture = TestBed.createComponent(HelloCmp);
+          fixture = TestBed.createComponent(UIRootCmp);
           advance(fixture);
           ngxAnalytics.pageTrack.subscribe((x) => EventSpy(x));
           state.go('home');
