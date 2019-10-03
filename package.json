@@ -1,5 +1,6 @@
 {
   "name": "ngx-analytics",
+  "version" : "4.6.3",
   "description": "Vendor-agnostic web analytics for Angular2 applications, based on angulartics2",
   "homepage": "",
   "author": "Gert Pellin <pellingert@gmail.com> (http://github.com/switch87)",
